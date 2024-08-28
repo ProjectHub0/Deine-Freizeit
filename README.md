@@ -8,7 +8,7 @@ Eine Website in der es Rund um Unternehmungsideen, Events, Hobbys, Küche und me
 
 1. Klone das Repository:
     ```bash
-    git clone https://github.com/dein-benutzername/deine-freizeit.git
+    git clone https://github.com/ProjectHub0/deine-freizeit.git
     ```
 2. Navigiere in das Projektverzeichnis:
     ```bash
