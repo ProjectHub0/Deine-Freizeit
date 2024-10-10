@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Deine Freizeit</title>
+
+  
+
+ <style>
+
+
+body, nav {
+	 font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+	.header-image {
+	height: 45vh;
+	width: 100%;
+	object-fit: cover;
+	filter: brightness(0,5);
+	z-index: 1;
+	}
+	
+		.logo {
+	position: absolute;
+	height: 90px;
+	border-radius: 43px;
+	margin-top: 15px;
+	right: 20px
+	}
+
+nav {
+    background-color: #5f9834;
+    padding: 10px 20px;
+    position: relative;
+	 margin: 0;
+	 border: 0;
+	z-index: 2;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 0;
+    display: block;
+	 
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #444;
+    padding: 10px 0;
+    display: none;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown li {
+    margin: 0;
+}
+
+.dropdown a {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.nav-list li:hover .dropdown {
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.dropdown a::after {
+    content: none;
+}
+
+
+.headline {
+	position: absolute;
+	left: 50px;
+	top: 150px;
+	color: white;
+	font-size: 50px;
+	width: 100px;
+	text-shadow: 10px 5px 10px rgba(0,0,0);
+	}
+	
+
+	
+	
+	h2 {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 50px;
+	}
+	
+	
+	section {
+	height: 300px; 
+	padding: 30px 35px;
+	display: flex;
+	} 
+	
+	
+	h3 {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 30px;
+	}
+	
+		.video-container {
+	width: 100%;
+	padding: 30px 35px;
+	display: flex;
+	text-align: center;
+	}
+	
+	h4 {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 30px;
+	}
+	
+		.half-width {
+	width: 50%;
+	}
+	
+		.description-section {
+	height: 300px; 
+	padding: 30px 35px;
+	display: flex;
+	gap: 50px;
+	} 
+
+
+	.center {
+	display: block;
+	width: 50%; /* Passt die Breite des Bildes auf 50% der übergeordneten Containerbreite an */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+p {
+	font-size: 16px; /* Ändere die Schriftgröße für p auf 16px */
+	color: black;
+
+	text-align: center; /* Zentriere den Text horizontal */
+}
+
+
+.bt {
+	background-color: green;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.bt:hover {
+	background-color: #555;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+    }
+
+
+footer {
+	width: 100%;
+	display: block;
+	background-color: #5f9834;
+	padding: 20px 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center; /* Zentriert den Inhalt horizontal */
+	align-items: bottom; /* Zentriert den Inhalt vertikal */
+}
+
+footer p {
+	margin: 0;
+	color: white;
+}
+
+}
+
+	</style>
+	
+	
+</head>
+
+<body>
+
+
+     <nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-list">
+            <li><a href="demohome.html">Home</a></li>
+
+<!-- <li>
+                <a href="#">Events</a>
+                <ul class="dropdown">
+                    <li><a href="#">Kulturelles</a></li>
+                    <li><a href="#">Festivals</a></li>
+                    <li><a href="#">Sportveranstaltungen</a></li>
+                </ul>
+            </li>
+-->
+            <li>
+                <a href="#">Unternehmungen</a>
+                <ul class="dropdown">
+                    <li><a href="outdoorindoor.html">Outdoor/Indoor Aktivitäten</a></li>
+                    <li><a href="erlebnisse.html">Städtische Erlebnisse</a></li>
+
+							<li><a href="ausflugurlaub.html">Ausflüge/Urlaub</a></li>
+                    <li><a href="attraktionen.html">Freizeitparks & Attraktionen</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Events</a>
+                <ul class="dropdown">
+                    <li><a href="kulturelles.html">Kulturelles</a></li>
+                    <li><a href="festivals.html">Festivals</a></li>
+                    <li><a href="veranstaltungen">Sportveranstaltungen</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Hobbys</a>
+                <ul class="dropdown">
+                    <li><a href="kreativ.html">Kreatives</a></li>
+                    <li><a href="handwerk.html">Handwerk</a></li>
+                    <li><a href="fitness.html">Fitness </a></li>
+                </ul>
+            </li>
+
+
+	 <li>
+                <a href="#">Küche</a>
+                <ul class="dropdown">
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                    <li><a href="#">Kochtechniken</a></li>
+                    <li><a href="#">Ernährungstipps</a></li>
+                </ul>
+            </li>
+ 
+
+ <li>
+                <a href="#">Alltag</a>
+                <ul class="dropdown">
+                    <li><a href="#">Haushalt & Wohnen</a></li>
+                    <li><a href="#">Tipps & Ratgeber</a></li>
+                    <li><a href="#">Gesundheit & Bewusstsein</a></li>
+                </ul>
+            </li>
+
+    </nav>
+
+
+ <img class="header-image" src="couple-3519503_1280.jpg">
+
+<img src= "Deine freizeit - 		1.png" class="logo">
+
+
+		<h1 class="headline">Deine Freizeit</h1>
+		
+	<h2>Einführung</h2>
+	<section>
+	<p>Willkommen auf &quot;Deine Freizeit&quot;– deinem Ort für spannende Freizeitideen!
+<br>Auf unserer Website findest du Inspiration für abwechslungsreiche und kreative Aktivitäten, egal ob du zu Hause entspannen oder draußen Abenteuer erleben möchtest. Durchstöbere unsere Kategorien und entdecke Tipps und Events, die deinen Alltag bereichern. Mit unserer benutzerfreundlichen Navigation ist es kinderleicht, neue Hobbys zu finden oder dein nächstes Abenteuer zu planen. Starte jetzt und finde deine perfekte Freizeitgestaltung!</p>
+	</section>
+	
+
+
+
+	<h3>Video</h3>
+	
+
+		<div class="video-container">
+<iframe
+width="300"
+height="230"
+src="https://www.youtube.com/embed/MMub8wq7U9RCZEsD https://www.youtube.com/watch?v" title="Youtube Video Player" 
+style="frameBorder:0"   allow="accelerometer"></iframe>
+
+		</div>
+		
+	</div>
+
+
+
+<h4>Anfahrt</h4>
+	<div class="description-section">
+	<div class="half-width">
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+	</div>
+	
+	<div class="half-width">
+	<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+	<!--Lorem ipsum dolor sit amet, consectetur adipisici elit-->
+	</div>
+	
+		</div>
+
+<br>
+
+<!--dies ist eine trennlinie-->
+ <hr size="5" color="#5f9834">
+
+
+<br>
+
+
+	<img src="road-1072821_1280.jpg" alt="Wald" class="center">
+
+		<p>Hier gehts zu den Date Ideen für den Herbst</p>
+		
+		<div style="display: flex; justify-content: center;">
+	
+<a href="122.html"><button class="bt">>></button></a>
+	
+	</div>
+	
+<br><br>
+
+
+	<img src="IMG_5820.JPG" alt="Origami" class="center">
+
+		<p>Hier findest du Vorlagen & Hobbyideen!</p>
+		
+		<div style="display: flex; justify-content: center;">
+	<button class="bt">>></button>
+	
+	</div>
+	
+
+
+<br> <br>
+
+
+<img src="headlights-802633_1280.jpg" alt="Bühnenlichter" class="center">
+
+		<p>Hier findest du Infos Rund um Events & Veranstaltungen!</p>
+		
+		
+	<div style="display: flex; justify-content: center;">
+	<button class="bt">>></button>
+
+ </div>
+
+
+
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+<footer>
+        <!-- Hier kannst du den Footer der Seite einfügen, z. B. Links zu sozialen Medien oder Kontaktinformationen -->
+        <p>&copy; 2024 Deine Freizeit. All rights reserved.</p>
+    </footer>
+
+</body>
+
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        const dropdownLinks = document.querySelectorAll('.dropdown a');
+
+        toggleButton.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Schließen des Dropdowns beim Klicken auf einen Link
+                navList.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
